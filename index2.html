@@ -7,11 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"/>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   background: #eae8e2;
@@ -32,18 +28,9 @@ body {
   flex-direction: row;
 }
 
-/* ── Leaf borders ── */
-.border-left, .border-right {
-  flex-shrink: 0;
-  width: 56px;
-}
-.border-left svg, .border-right svg {
-  width: 56px;
-  height: 100%;
-  display: block;
-}
+.border-left, .border-right { flex-shrink: 0; width: 56px; }
+.border-left svg, .border-right svg { width: 56px; height: 100%; display: block; }
 
-/* ── Content ── */
 .content {
   flex: 1;
   padding: 28px 20px 32px;
@@ -51,67 +38,29 @@ body {
   flex-direction: column;
 }
 
-/* ── House header ── */
-.house-header {
-  position: relative;
-  width: 100%;
-  margin-bottom: 4px;
-}
-.house-svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+.house-header { position: relative; width: 100%; margin-bottom: 4px; }
+.house-svg { width: 100%; height: auto; display: block; }
 .house-text {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
+  position: absolute; bottom: 0; left: 50%;
   transform: translateX(-50%);
-  text-align: center;
-  width: 100%;
-  padding-bottom: 4px;
+  text-align: center; width: 100%; padding-bottom: 4px;
 }
 .title-main {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  font-size: 1.55rem;
-  color: #3d7a50;
-  letter-spacing: .04em;
-  line-height: 1.2;
+  font-family: 'Nunito', sans-serif; font-weight: 700;
+  font-size: 1.55rem; color: #3d7a50; letter-spacing: .04em; line-height: 1.2;
 }
-.title-script {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.8rem;
-  color: #3d7a50;
-  line-height: 1.05;
-}
+.title-script { font-family: 'Dancing Script', cursive; font-size: 2.8rem; color: #3d7a50; line-height: 1.05; }
 
-/* ── Section titles ── */
 .section-title {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 1.25rem;
-  color: #3d7a50;
-  margin-bottom: 8px;
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: 1.25rem; color: #3d7a50; margin-bottom: 8px;
 }
 
-/* ── Cozinha 2-col ── */
 .section-block { margin-bottom: 20px; }
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 16px;
-}
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.three-col-block { display: grid; grid-template-columns: 2fr 1.4fr 1fr; gap: 0 12px; margin-bottom: 22px; }
 
-/* ── Banheiro / Quarto / Extra 3-col ── */
-.three-col-block {
-  display: grid;
-  grid-template-columns: 2fr 1.4fr 1fr;
-  gap: 0 12px;
-  margin-bottom: 22px;
-}
-
-/* ── Lists ── */
+/* ── Lista com itens clicáveis ── */
 ul { list-style: none; padding: 0; margin: 0; }
 ul li {
   position: relative;
@@ -120,23 +69,94 @@ ul li {
   font-weight: 400;
   color: #2a2a2a;
   line-height: 1.75;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background .15s;
+  user-select: none;
 }
-ul li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  color: #2a2a2a;
+ul li::before { content: '•'; position: absolute; left: 0; color: #2a2a2a; }
+ul li:hover { background: #e4f0e0; }
+
+ul li.selected {
+  background: #c8e6c0;
+  font-weight: 700;
+  color: #2a5a2a;
 }
+ul li.selected::before { content: '✓'; color: #3d7a50; font-weight: 800; }
+
+/* ── Instrução de seleção ── */
+.hint {
+  font-size: .78rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* ── Botão WhatsApp ── */
+.whatsapp-bar {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.whatsapp-bar.visible { display: flex; }
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #25d366;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  white-space: nowrap;
+}
+.whatsapp-btn:hover { background: #1db954; transform: scale(1.04); }
+
+.whatsapp-btn svg { flex-shrink: 0; }
+
+.counter-badge {
+  background: #3d7a50;
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: .78rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  letter-spacing: .03em;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: .75rem;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: 'Nunito', sans-serif;
+}
+.clear-btn:hover { color: #c0392b; }
 
 /* ── Footer ── */
 .footer-note {
-  font-family: 'Nunito', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  color: #3d7a50;
-  text-align: center;
-  margin-top: auto;
-  padding-top: 6px;
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: 1.15rem; color: #3d7a50;
+  text-align: center; margin-top: auto; padding-top: 6px;
+  margin-bottom: 60px;
 }
 </style>
 </head>
@@ -144,7 +164,7 @@ ul li::before {
 
 <div class="page">
 
-  <!-- ══ LEAF BORDER LEFT ══ -->
+  <!-- LEAF LEFT -->
   <div class="border-left">
     <svg viewBox="0 0 60 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <g opacity=".75">
@@ -181,7 +201,7 @@ ul li::before {
     </svg>
   </div>
 
-  <!-- ══ MAIN CONTENT ══ -->
+  <!-- MAIN CONTENT -->
   <div class="content">
 
     <div class="house-header">
@@ -197,6 +217,8 @@ ul li::before {
         <p class="title-script"><a href="index.html">Audrey</a></p>
       </div>
     </div>
+
+    <p class="hint">👆 Toque no item que você quer levar para confirmar sua escolha</p>
 
     <!-- Cozinha -->
     <div class="section-block">
@@ -298,7 +320,7 @@ ul li::before {
 
   </div>
 
-  <!-- ══ LEAF BORDER RIGHT ══ -->
+  <!-- LEAF RIGHT -->
   <div class="border-right">
     <svg viewBox="0 0 60 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <g opacity=".75">
@@ -336,5 +358,74 @@ ul li::before {
   </div>
 
 </div>
+
+<!-- ══ WHATSAPP FLOATING BAR ══ -->
+<div class="whatsapp-bar" id="whatsappBar">
+  <span class="counter-badge" id="counterBadge"></span>
+  <a class="whatsapp-btn" id="whatsappBtn" href="#" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    Confirmar pelo WhatsApp
+  </a>
+  <button class="clear-btn" id="clearBtn">Limpar seleção</button>
+</div>
+
+<script>
+  // ══ CONFIGURAÇÃO ══
+  // Coloque aqui o número do WhatsApp com DDI+DDD (sem espaços ou símbolos)
+  const WHATSAPP_NUMBER = "5551982311402"; // ← SUBSTITUA pelo seu número
+
+  // ══ LÓGICA ══
+  const selected = new Set();
+  const bar      = document.getElementById("whatsappBar");
+  const btn      = document.getElementById("whatsappBtn");
+  const badge    = document.getElementById("counterBadge");
+  const clearBtn = document.getElementById("clearBtn");
+
+  // Torna todos os <li> clicáveis
+  document.querySelectorAll("ul li").forEach(li => {
+    li.addEventListener("click", () => {
+      const item = li.textContent.trim();
+      if (selected.has(item)) {
+        selected.delete(item);
+        li.classList.remove("selected");
+      } else {
+        selected.add(item);
+        li.classList.add("selected");
+      }
+      update();
+    });
+  });
+
+  clearBtn.addEventListener("click", () => {
+    selected.clear();
+    document.querySelectorAll("ul li.selected").forEach(li => li.classList.remove("selected"));
+    update();
+  });
+
+  function update() {
+    if (selected.size === 0) {
+      bar.classList.remove("visible");
+      return;
+    }
+
+    bar.classList.add("visible");
+
+    const count = selected.size;
+    badge.textContent = count === 1 ? "1 item selecionado" : `${count} itens selecionados`;
+
+    const lista = Array.from(selected).map((item, i) => `${i + 1}. ${item}`).join("\n");
+    const mensagem =
+      `Olá Audrey! 🏡\n` +
+      `Quero levar para o seu chá de casa nova:\n\n` +
+      `${lista}\n\n` +
+      `Nos tons branco ou verde oliva 💚`;
+
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+    btn.href = url;
+  }
+</script>
+
 </body>
 </html>
