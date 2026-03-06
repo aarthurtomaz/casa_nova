@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chá de Casa Nova – Lista Audrey</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"/>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eae8e2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 30px 16px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.page {
+  position: relative;
+  width: 780px;
+  background: #f5f3ee;
+  box-shadow: 0 4px 40px rgba(0,0,0,.13);
+  display: flex;
+  flex-direction: row;
+}
+
+/* ── Leaf borders ── */
+.border-left, .border-right {
+  flex-shrink: 0;
+  width: 56px;
+}
+.border-left svg, .border-right svg {
+  width: 56px;
+  height: 100%;
+  display: block;
+}
+
+/* ── Content ── */
+.content {
+  flex: 1;
+  padding: 28px 20px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── House header ── */
+.house-header {
+  position: relative;
+  width: 100%;
+  margin-bottom: 4px;
+}
+.house-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.house-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+  padding-bottom: 4px;
+}
+.title-main {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: #3d7a50;
+  letter-spacing: .04em;
+  line-height: 1.2;
+}
+.title-script {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  color: #3d7a50;
+  line-height: 1.05;
+}
+
+/* ── Section titles ── */
+.section-title {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #3d7a50;
+  margin-bottom: 8px;
+}
+
+/* ── Cozinha 2-col ── */
+.section-block { margin-bottom: 20px; }
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+/* ── Banheiro / Quarto / Extra 3-col ── */
+.three-col-block {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1fr;
+  gap: 0 12px;
+  margin-bottom: 22px;
+}
+
+/* ── Lists ── */
+ul { list-style: none; padding: 0; margin: 0; }
+ul li {
+  position: relative;
+  padding-left: 14px;
+  font-size: .82rem;
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 1.75;
+}
+ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #2a2a2a;
+}
+
+/* ── Footer ── */
+.footer-note {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #3d7a50;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 6px;
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══ LEAF BORDER LEFT ══ -->
+  <div class="border-left">
+    <svg viewBox="0 0 60 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <g opacity=".75">
+        <line x1="30" y1="0" x2="30" y2="700" stroke="#7aaa72" stroke-width="1.2"/>
+        <ellipse cx="18" cy="60"  rx="10" ry="22" transform="rotate(-30 18 60)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="42" cy="100" rx="10" ry="22" transform="rotate(25 42 100)"  fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="16" cy="150" rx="10" ry="22" transform="rotate(-35 16 150)" fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="44" cy="195" rx="10" ry="22" transform="rotate(20 44 195)"  fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="15" cy="245" rx="10" ry="22" transform="rotate(-30 15 245)" fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="45" cy="290" rx="10" ry="22" transform="rotate(28 45 290)"  fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="16" cy="340" rx="10" ry="22" transform="rotate(-32 16 340)" fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="44" cy="385" rx="10" ry="22" transform="rotate(22 44 385)"  fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="15" cy="435" rx="10" ry="22" transform="rotate(-28 15 435)" fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="45" cy="480" rx="10" ry="22" transform="rotate(30 45 480)"  fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="16" cy="530" rx="10" ry="22" transform="rotate(-35 16 530)" fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="44" cy="575" rx="10" ry="22" transform="rotate(20 44 575)"  fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="15" cy="625" rx="10" ry="22" transform="rotate(-30 15 625)" fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="45" cy="668" rx="10" ry="22" transform="rotate(25 45 668)"  fill="#b4d0aa" opacity=".65"/>
+        <line x1="30" y1="55"  x2="18" y2="60"  stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="95"  x2="42" y2="100" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="145" x2="16" y2="150" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="190" x2="44" y2="195" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="240" x2="15" y2="245" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="285" x2="45" y2="290" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="335" x2="16" y2="340" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="380" x2="44" y2="385" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="430" x2="15" y2="435" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="475" x2="45" y2="480" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="525" x2="16" y2="530" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="570" x2="44" y2="575" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="620" x2="15" y2="625" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="663" x2="45" y2="668" stroke="#7aaa72" stroke-width="1"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ══ MAIN CONTENT ══ -->
+  <div class="content">
+
+    <div class="house-header">
+      <svg class="house-svg" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <rect x="310" y="28" width="30" height="55" stroke="#4a8a5a" stroke-width="5" fill="none"/>
+        <polyline points="30,160 250,20 470,160" stroke="#4a8a5a" stroke-width="6" fill="none" stroke-linejoin="round"/>
+        <line x1="30"  y1="160" x2="30"  y2="220" stroke="#4a8a5a" stroke-width="6"/>
+        <line x1="470" y1="160" x2="470" y2="220" stroke="#4a8a5a" stroke-width="6"/>
+        <rect x="318" y="35" width="14" height="18" stroke="#4a8a5a" stroke-width="3" fill="none"/>
+      </svg>
+      <div class="house-text">
+        <p class="title-main">chá de casa nova</p>
+        <p class="title-script"><a href="index.html">Audrey</a></p>
+      </div>
+    </div>
+
+    <!-- Cozinha -->
+    <div class="section-block">
+      <h2 class="section-title">Cozinha</h2>
+      <div class="two-col">
+        <ul>
+          <li>Aparelho de jantar</li>
+          <li>Jogo de talheres</li>
+          <li>Jogo de xícaras médias</li>
+          <li>Jogo de copos transparentes GG</li>
+          <li>Jogo de copos M</li>
+          <li>Kit assadeiras de vidro</li>
+          <li>Jogo de panelas</li>
+          <li>Kit frigideira</li>
+          <li>Kit facas para corte</li>
+          <li>Kit churrasco</li>
+          <li>Kit sobremesa</li>
+          <li>Escorredor de macarrão</li>
+          <li>Taças de vinho</li>
+          <li>Abridor de vinho</li>
+          <li>Abridor de lata</li>
+          <li>Porta ovos</li>
+          <li>Jarra de vidro</li>
+          <li>Jarra para suco</li>
+          <li>Descanso de panela</li>
+          <li>Cafeteira</li>
+        </ul>
+        <ul>
+          <li>Boleira</li>
+          <li>Porta tempero</li>
+          <li>Triturador de alho</li>
+          <li>Mop</li>
+          <li>Porta copos</li>
+          <li>Jogo americano</li>
+          <li>Toalhas de mesa</li>
+          <li>Fruteira decorativa</li>
+          <li>Bomboniere</li>
+          <li>Espremedor de frutas</li>
+          <li>Formas de gelo</li>
+          <li>Açucareiro</li>
+          <li>Saleiro</li>
+          <li>Cortina para cozinha</li>
+          <li>Kit utensílios</li>
+          <li>Kit avental e luva</li>
+          <li>Kit tapete para cozinha</li>
+          <li>Porta guardanapo</li>
+          <li>Forma de pudim</li>
+          <li>Lixeira de chão</li>
+          <li>Lixeira de pia</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Banheiro / Quarto / Extra -->
+    <div class="three-col-block">
+      <div>
+        <h2 class="section-title">Banheiro</h2>
+        <ul>
+          <li>Balde retrátil</li>
+          <li>Bacia retrátil</li>
+          <li>Pregador de roupa</li>
+          <li>Escova para sanitário</li>
+          <li>Kit rodo, vassoura e pá</li>
+          <li>Porta sabão</li>
+          <li>Kit (porta escova, saboneteira)</li>
+          <li>Lixeira</li>
+          <li>Cesto de roupa</li>
+          <li>Kit tapete de banheiro</li>
+          <li>Kit toalhas de banho</li>
+          <li>Mop</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Quarto</h2>
+        <ul>
+          <li>Cortina sala 2,50x3m</li>
+          <li>Cortina quarto</li>
+          <li>Tapete</li>
+          <li>Almofadas para sofá</li>
+          <li>Porta copos</li>
+          <li>Jogo americano</li>
+          <li>Fruteira</li>
+          <li>Bomboniere</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Extra</h2>
+        <ul>
+          <li>Air fryer</li>
+          <li>Liquidificador</li>
+          <li>Chaleira</li>
+          <li>Panela de pressão</li>
+          <li>Jarra elétrica</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer-note">Nos tons branco ou verde oliva</p>
+
+  </div>
+
+  <!-- ══ LEAF BORDER RIGHT ══ -->
+  <div class="border-right">
+    <svg viewBox="0 0 60 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <g opacity=".75">
+        <line x1="30" y1="0" x2="30" y2="700" stroke="#7aaa72" stroke-width="1.2"/>
+        <ellipse cx="42" cy="60"  rx="10" ry="22" transform="rotate(30 42 60)"   fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="18" cy="100" rx="10" ry="22" transform="rotate(-25 18 100)" fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="44" cy="150" rx="10" ry="22" transform="rotate(35 44 150)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="16" cy="195" rx="10" ry="22" transform="rotate(-20 16 195)" fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="45" cy="245" rx="10" ry="22" transform="rotate(30 45 245)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="15" cy="290" rx="10" ry="22" transform="rotate(-28 15 290)" fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="44" cy="340" rx="10" ry="22" transform="rotate(32 44 340)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="16" cy="385" rx="10" ry="22" transform="rotate(-22 16 385)" fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="45" cy="435" rx="10" ry="22" transform="rotate(28 45 435)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="15" cy="480" rx="10" ry="22" transform="rotate(-30 15 480)" fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="44" cy="530" rx="10" ry="22" transform="rotate(35 44 530)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="16" cy="575" rx="10" ry="22" transform="rotate(-20 16 575)" fill="#b4d0aa" opacity=".65"/>
+        <ellipse cx="45" cy="625" rx="10" ry="22" transform="rotate(30 45 625)"  fill="#a8c89e" opacity=".7"/>
+        <ellipse cx="15" cy="668" rx="10" ry="22" transform="rotate(-25 15 668)" fill="#b4d0aa" opacity=".65"/>
+        <line x1="30" y1="55"  x2="42" y2="60"  stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="95"  x2="18" y2="100" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="145" x2="44" y2="150" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="190" x2="16" y2="195" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="240" x2="45" y2="245" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="285" x2="15" y2="290" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="335" x2="44" y2="340" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="380" x2="16" y2="385" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="430" x2="45" y2="435" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="475" x2="15" y2="480" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="525" x2="44" y2="530" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="570" x2="16" y2="575" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="620" x2="45" y2="625" stroke="#7aaa72" stroke-width="1"/>
+        <line x1="30" y1="663" x2="15" y2="668" stroke="#7aaa72" stroke-width="1"/>
+      </g>
+    </svg>
+  </div>
+
+</div>
+</body>
+</html>

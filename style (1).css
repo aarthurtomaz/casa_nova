@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e5dfd7;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+}
+
+a {
+    color: rgb(74, 92, 48);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+    color: rgb(39, 49, 25);
+  transition: .2s;
+}
+.invite {
+  position: relative;
+  width: 480px;
+  background: #fdfcf9;
+  padding: 64px 58px 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  box-shadow: 0 4px 36px rgba(0, 0, 0, .13);
+}
+
+/* ─── Floral corners ─── */
+.corner {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.corner-tl { top: -4px; left: -4px; }
+.corner-tr { top: -4px; right: -4px; transform: scaleX(-1); }
+.corner-bl { bottom: -4px; left: -4px; transform: scaleY(-1); }
+.corner-br { bottom: -4px; right: -4px; transform: scale(-1, -1); }
+
+/* ─── House ─── */
+.house {
+  margin-bottom: 8px;
+}
+
+/* ─── Título ─── */
+.cha-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: .20em;
+  color: rgb(74, 92, 48);
+  margin-bottom: 2px;
+}
+
+/* ─── Nome cursivo ─── */
+.name-script {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.9rem;
+  color: #8c7098;
+  line-height: 1.1;
+  margin-bottom: 22px;
+}
+
+/* ─── Seção ingredientes ─── */
+.section-head {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: .87rem;
+  letter-spacing: .06em;
+  color: #4a5c30;
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
+
+.ingredients {
+  list-style: none;
+  align-self: flex-start;
+  margin-bottom: 22px;
+}
+
+.ingredients li {
+  font-size: .87rem;
+  font-weight: 300;
+  color: #2e2e2e;
+  padding: 2px 0 2px 16px;
+  position: relative;
+  line-height: 1.65;
+  text-align: left;
+}
+
+.ingredients li::before {
+  content: '•';
+  position: absolute;
+  left: 1px;
+  color: #2e2e2e;
+}
+
+/* ─── Modo de preparo ─── */
+.preparo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.preparo-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: .12em;
+  color: #4a5c30;
+}
+
+.preparo-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: .97rem;
+  color: #2e2e2e;
+  line-height: 1.65;
+  margin-bottom: 26px;
+}
+
+/* ─── Data e hora ─── */
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: .95rem;
+  color: #2e2e2e;
+}
+
+/* ─── Endereço ─── */
+.address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.address-text {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: .91rem;
+  color: #2e2e2e;
+  line-height: 1.55;
+  text-align: center;
+}

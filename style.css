@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+a {
+    color: rgb(74, 92, 48);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+    color: rgb(39, 49, 25);
+  transition: .2s;
+}
