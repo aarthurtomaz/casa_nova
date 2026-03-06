@@ -1,169 +1,188 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@charset "UTF-8";
 
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── Body: coluna para empilhar page + footer ── */
 body {
-  background: #e5dfd7;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px 16px;
-}
-
-a {
-    color: rgb(74, 92, 48);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
-    color: rgb(39, 49, 25);
-  transition: .2s;
-}
-.invite {
-  position: relative;
-  width: 480px;
-  background: #fdfcf9;
-  padding: 64px 58px 54px;
+  background: #eae8e2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  font-family: 'Josefin Sans', sans-serif;
-  box-shadow: 0 4px 36px rgba(0, 0, 0, .13);
+  min-height: 100vh;
+  padding: 20px 8px 0;
+  font-family: 'Nunito', sans-serif;
 }
 
-/* ─── Floral corners ─── */
-.corner {
-  position: absolute;
-  width: 210px;
-  height: 210px;
-  pointer-events: none;
-  overflow: visible;
+/* ── Page wrapper ── */
+.page {
+  width: 100%;
+  max-width: 780px;
+  background: #f5f3ee;
+  box-shadow: 0 4px 40px rgba(0,0,0,.13);
+  display: flex;
+  flex-direction: row;
 }
 
-.corner-tl { top: -4px; left: -4px; }
-.corner-tr { top: -4px; right: -4px; transform: scaleX(-1); }
-.corner-bl { bottom: -4px; left: -4px; transform: scaleY(-1); }
-.corner-br { bottom: -4px; right: -4px; transform: scale(-1, -1); }
+/* ── Leaf borders ── */
+.border-left, .border-right { flex-shrink: 0; width: 56px; }
+.border-left svg, .border-right svg { width: 56px; height: 100%; display: block; }
 
-/* ─── House ─── */
-.house {
-  margin-bottom: 8px;
+/* ── Content ── */
+.content {
+  flex: 1; min-width: 0;
+  padding: 20px 14px 16px;
+  display: flex; flex-direction: column;
 }
 
-/* ─── Título ─── */
-.cha-title {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: 1.5rem;
-  letter-spacing: .20em;
-  color: rgb(74, 92, 48);
-  margin-bottom: 2px;
+/* ── House header ── */
+.house-header { position: relative; width: 100%; margin-bottom: 6px; }
+.house-svg    { width: 100%; height: auto; display: block; }
+.house-text {
+  position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  text-align: center; width: 100%; padding-bottom: 2px;
 }
-
-/* ─── Nome cursivo ─── */
-.name-script {
+.title-main {
+  font-family: 'Nunito', sans-serif; font-weight: 700;
+  font-size: clamp(.9rem, 3.5vw, 1.55rem);
+  color: #3d7a50; letter-spacing: .04em; line-height: 1.2;
+}
+.title-script {
   font-family: 'Dancing Script', cursive;
-  font-size: 3.9rem;
-  color: #8c7098;
-  line-height: 1.1;
-  margin-bottom: 22px;
+  font-size: clamp(1.6rem, 6vw, 2.8rem);
+  color: #3d7a50; line-height: 1.05;
+}
+.title-script a { color: #3d7a50; text-decoration: none; }
+.title-script a:hover { color: #2a5a38; }
+
+/* ── Section titles ── */
+.section-title {
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: clamp(.9rem, 3vw, 1.25rem);
+  color: #3d7a50; margin-bottom: 6px;
 }
 
-/* ─── Seção ingredientes ─── */
-.section-head {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: .87rem;
-  letter-spacing: .06em;
-  color: #4a5c30;
-  align-self: flex-start;
-  margin-bottom: 6px;
+/* ── Cozinha 2-col ── */
+.section-block { margin-bottom: 18px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+
+/* ── Banheiro / Quarto / Extra 3-col ── */
+.three-col-block {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1fr;
+  gap: 0 12px; margin-bottom: 18px;
 }
 
-.ingredients {
-  list-style: none;
-  align-self: flex-start;
-  margin-bottom: 22px;
-}
+/* ── Extra: 2 colunas + item extenso centralizado abaixo ── */
+.extra-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 8px; }
+.extra-bottom { grid-column: 1 / -1; display: flex; justify-content: center; }
+.extra-bottom li { text-align: center; padding-left: 0 !important; }
+.extra-bottom li::before { display: none; }
 
-.ingredients li {
-  font-size: .87rem;
-  font-weight: 300;
-  color: #2e2e2e;
-  padding: 2px 0 2px 16px;
+/* ── Lists ── */
+ul { list-style: none; padding: 0; margin: 0; }
+ul li {
   position: relative;
-  line-height: 1.65;
-  text-align: left;
+  padding: 4px 4px 4px 16px;
+  font-size: clamp(.75rem, 2.4vw, .85rem);
+  font-weight: 400; color: #2a2a2a; line-height: 1.6;
+  cursor: pointer; border-radius: 6px; transition: background .15s;
+  user-select: none; -webkit-tap-highlight-color: transparent;
+}
+ul li::before  { content: '•'; position: absolute; left: 2px; color: #2a2a2a; }
+ul li:hover    { background: #e4f0e0; }
+ul li:active   { background: #c8e6c0; }
+ul li.selected { background: #c8e6c0; font-weight: 700; color: #2a5a2a; }
+ul li.selected::before { content: '✓'; color: #3d7a50; font-weight: 800; }
+
+/* ── Hint ── */
+.hint {
+  font-size: clamp(.7rem, 2.5vw, .78rem);
+  color: #888; text-align: center;
+  margin-bottom: 12px; font-style: italic;
 }
 
-.ingredients li::before {
-  content: '•';
-  position: absolute;
-  left: 1px;
-  color: #2e2e2e;
+/* ── Footer note (tons branco/verde) ── */
+.footer-note {
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: clamp(.9rem, 3vw, 1.15rem);
+  color: #3d7a50; text-align: center;
+  margin-top: auto; padding: 6px 0 12px;
 }
 
-/* ─── Modo de preparo ─── */
-.preparo-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+/* ══════════════════════════════
+   FOOTER DEV
+══════════════════════════════ */
+.site-footer {
+  width: 100%; max-width: 780px;
+  background: #3d7a50; color: #d4edd8;
+  text-align: center; padding: 14px 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: .78rem; font-weight: 400; line-height: 1.9;
+}
+.footer-dev, .footer-contact {
+  display: flex; align-items: center;
+  justify-content: center; gap: 6px;
+}
+.site-footer a { color: #a8ddb5; text-decoration: none; font-weight: 700; transition: color .2s; }
+.site-footer a:hover { color: #fff; }
+.footer-wa { display: inline-flex; align-items: center; color: #a8ddb5; transition: color .2s; }
+.footer-wa:hover { color: #25d366; }
+
+/* ── WhatsApp floating bar ── */
+.whatsapp-bar {
+  display: none; position: fixed;
+  bottom: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 999; flex-direction: column; align-items: center;
+  gap: 6px; width: calc(100% - 32px); max-width: 400px;
+}
+.whatsapp-bar.visible { display: flex; }
+
+.whatsapp-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 10px; width: 100%;
+  background: #25d366; color: #fff;
+  font-family: 'Nunito', sans-serif; font-weight: 800;
+  font-size: clamp(.9rem, 3.5vw, 1rem);
+  padding: 14px 20px; border-radius: 50px; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  text-decoration: none; transition: background .2s, transform .15s; white-space: nowrap;
+}
+.whatsapp-btn:hover  { background: #1db954; transform: scale(1.02); }
+.whatsapp-btn:active { background: #1aaf50; transform: scale(.98); }
+.whatsapp-btn svg { flex-shrink: 0; }
+
+.counter-badge {
+  background: #3d7a50; color: #fff;
+  font-family: 'Nunito', sans-serif; font-weight: 700;
+  font-size: .75rem; padding: 3px 14px; border-radius: 20px;
+}
+.clear-btn {
+  background: none; border: none; color: #888;
+  font-size: .72rem; cursor: pointer;
+  text-decoration: underline; font-family: 'Nunito', sans-serif;
+}
+.clear-btn:hover { color: #c0392b; }
+
+/* ══════════════════════════════
+   RESPONSIVO
+══════════════════════════════ */
+@media (max-width: 600px) {
+  body { padding: 0; }
+  .page { box-shadow: none; }
+  .border-left, .border-right { width: 28px; }
+  .border-left svg, .border-right svg { width: 28px; }
+  .content { padding: 16px 8px 16px; }
+  .two-col { gap: 0 8px; }
+  .three-col-block { grid-template-columns: 1fr 1fr; gap: 12px 8px; }
+  .three-col-block > div:last-child { grid-column: 1 / -1; }
+  .site-footer { width: 100%; }
 }
 
-.preparo-label {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  letter-spacing: .12em;
-  color: #4a5c30;
-}
-
-.preparo-text {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: .97rem;
-  color: #2e2e2e;
-  line-height: 1.65;
-  margin-bottom: 26px;
-}
-
-/* ─── Data e hora ─── */
-.meta-row {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 14px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: .95rem;
-  color: #2e2e2e;
-}
-
-/* ─── Endereço ─── */
-.address-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-.address-text {
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  font-size: .91rem;
-  color: #2e2e2e;
-  line-height: 1.55;
-  text-align: center;
+@media (max-width: 400px) {
+  .border-left, .border-right { width: 20px; }
+  .border-left svg, .border-right svg { width: 20px; }
+  .content { padding: 14px 6px 14px; }
+  .two-col { gap: 0 6px; }
+  ul li { padding: 5px 4px 5px 14px; line-height: 1.55; }
 }
